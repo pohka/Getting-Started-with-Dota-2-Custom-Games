@@ -17,36 +17,36 @@ This is the ultimate starting guide to making Dota 2 custom games.
 
 
 <br><hr>
-<p align="center" style="font-size:30px;">Setup</p>
-## Install tools
+## Setup
+### Install tools
 
 <br>
-## Create a project
+### Create a project
 
 <br>
-## IDE
+### IDE
 
 <br>
-## Wiki and references
+### Wiki and references
 
 <br>
-## Layout
+### Layout
 addon_game_mode.lua
 * activate
 * precache
 
 <br><hr>
 <p align="center" style="font-size:30px;">Lua Basics</p>
-## Previous Experience (XP)
+### Previous Experience (XP)
 Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type.
 
-## Hello World
+### Hello World
 This will print a message into the console
 ```lua
 print("Hello World")
 ```
 <br>
-## Variables
+### Variables
 Variables are defined with the "local" keyword. They allow you to store a value such as a number, string, boolean, etc.
 ```lua
 local x = 10
@@ -107,7 +107,7 @@ Global variables can be access from everywhere
 local _G.foo = 10
 ```
 <br>
-## Comments
+### Comments
 Comments won't be executed and can explain what a block of code does in English. This will allow you and others to understand your better. Everything after "--" will be commented out, but only on that line. You can comment out a block of code using "--[[ ]]"
 ```lua
 local x = 10 --this is a number
@@ -124,7 +124,7 @@ I don't execute either
 ]]
 ```
 <br>
-## Conditional Statements
+### Conditional Statements
 Conditional statements can decide which code you want to execute using the "if", "elseif", "else", "then" and "end" key words. The "then" keyword will signify the end of a comparison statement. "end" will be the end of the conditional block.
 ```lua
 local c = 100
@@ -181,26 +181,26 @@ end
 --result: at least one statement is true
 ```
 <br>
-## Loops
+### Loops
 * while
 * for
 * foreach
 
 <br>
-## Scope
+### Scope
 
 <br>
-## Functions
+### Functions
 
 <br>
-## Table Manipulation
+### Table Manipulation
 * insert
 * remove
 * looping
 * sort
 
 <br>
-## Math
+### Math
 The math class has a number of functions for dealing with numbers. You may not need them but here is some of the more useful one functions:
 * abs
 * ceil
@@ -220,21 +220,22 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 
 
 <br>
-## Classes
+### Classes
 * require
 
 <br>
-## Thinker Functions
+### Thinker Functions
 
 <br>
-## Game State
+### Game State
 
 <br>
-## KV Files
+### KV Files
 
 <br>
-## Lua Abilities
+### Lua Abilities
 
+<br>
 #### Event Listeners:
 * OnSpellStart()
   * When cast time ends, resources have been spent
@@ -289,23 +290,30 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 * GetChannelTime()
   * Determines the channel time. Return float value.
 
+<br>
 #### Special Values
 
 
+<br>
 #### Properties
 
+<br>
 #### Thinker
 
-## Lua Modifiers
+<br>
+### Lua Modifiers
 
+<br>
 #### Linking
 
+<br>
 #### Event Listeners
 * OnCreated( kv )
   * Called when the modifier is created, with a table of values in "kv". Client/Server. No return type.
 * OnRefresh( kv )
   * Called when the modifier is refreshed (created when already existing ). Client/Server, No return type.
 
+  <br>
 #### States
 * IsHidden()
   * Return true if this modifier should not appear on the buff bar. Client/Server, boolean return type.
@@ -316,6 +324,7 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 * GetEffectName()
   * Return the name of the particle effect that is applied on the parent when this buff is active. Client/Server, string return type.
 
+  <br>
 #### Modifier Functions
 ```lua
 function modifier_sven_warcry_lua:DeclareFunctions()
@@ -333,14 +342,17 @@ end
 
 #### Thinkers
 
+<br>
 #### Modifier State
 
 
 [wiki reference](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Lua_Abilities_and_Modifiers)
 
-## Custom Nettables
+<br>
+### Custom Nettables
 
-## Panorama
+<br>
+### Panorama
 * layouts
 * lists
 * css
