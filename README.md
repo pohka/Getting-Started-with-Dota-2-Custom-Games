@@ -1,6 +1,6 @@
 
-# Starter Guide for Making Dota 2 Custom Games
-Get started making custom games in Dota 2.
+# Getting Started with Dota 2 Custom Games
+This is the ultimate starting guide to making Dota 2 custom games.
 
 ## Refrences
 * API:
@@ -17,7 +17,26 @@ Get started making custom games in Dota 2.
 
 
 <br><hr>
-<p align="center" style="font-size:30px;">Lua Guide</p>
+<p align="center" style="font-size:30px;">Setup</p>
+## Install tools
+
+<br>
+## Create a project
+
+<br>
+## IDE
+
+<br>
+## Wiki and references
+
+<br>
+## Layout
+addon_game_mode.lua
+* activate
+* precache
+
+<br><hr>
+<p align="center" style="font-size:30px;">Lua Basics</p>
 ## Previous Experience (XP)
 Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type.
 
@@ -198,18 +217,7 @@ The math class has a number of functions for dealing with numbers. You may not n
 <br><hr>
 <p align="center" style="font-size:30px;">Dota 2 Custom Games</p>
 This part is more specific to writing Lua code for custom games in Dota 2.
-<br>
-## Setup
-* Install tools
-* Create a project
-* IDE
-* Wiki and references
 
-<br>
-## Layout
-addon_game_mode.lua
-* activate
-* precache
 
 <br>
 ## Classes
