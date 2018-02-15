@@ -16,7 +16,7 @@ This is the ultimate starting guide to making Dota 2 custom games.
 * Tutorials: [ModDota](https://moddota.com/forums/tutorial-index)
 
 
-<br>
+
 ## Setup
 
 
@@ -24,35 +24,36 @@ This is the ultimate starting guide to making Dota 2 custom games.
 todo
 
 
-<br>
+
 ### Create a project
 todo
 
 
-<br>
+
 ### IDE
 todo
 
 
-<br>
+
 ### Wiki and references
 todo
 
 
-<br>
+
 ### Layout
 addon_game_mode.lua
+
 * activate
 * precache
 
 
-<br>
+
 # Lua Basics
 ## Previous Experience (XP)
 Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type. One top of all of this Lua uses the "end" keyword to end a code block rather than the typical curly brackets "{ }". Lua also has garbage collection, so there is no need to worry about releasing variables form memory.
 
 
-<br>
+
 ## Hello World
 This will print a message into the console
 ```lua
@@ -60,7 +61,7 @@ print("Hello World")
 ```
 
 
-<br>
+
 ## Variables
 Variables are defined with the "local" keyword. They allow you to store a value such as a number, string, boolean, etc.
 
@@ -71,7 +72,7 @@ local x = 10
 local name = "john doe"
 local isAlive = false
 ```
-<br>
+
 Number operators:  
 * \+ addition
 * \- minus
@@ -88,7 +89,7 @@ print(x + 1) --result: 11
 print(x * 2) --result: 20
 print(x / 2) --result: 5
 ```
-<br>
+
 String concatenation uses the .. operator
 
 XP: Lua doesn't use + to concatenate strings
@@ -109,7 +110,7 @@ print(info.name .. ": " .. tostring(info.age)) --result: John: 18
 --this syntax is also valid
 print(info["name"] .. ": " .. tostring(info["age"])) --result: John: 18
 ```
-<br>
+
 XP: Arrays don't exist in Lua, instead you have indexed arrays. By default Lua starts counting from one and not zero.
 ```lua
 local materials = {
@@ -126,7 +127,7 @@ local _G.foo = 10
 ```
 
 
-<br>
+
 ## Comments
 Comments won't be executed and can explain what a block of code does in English. This will allow you and others to understand your better. Everything after "--" will be commented out, but only on that line. You can comment out a block of code using "--[[ ]]"
 ```lua
@@ -145,7 +146,7 @@ I don't execute either
 ```
 
 
-<br>
+
 ## Conditional Statements
 Conditional statements can decide which code you want to execute using the "if", "elseif", "else", "then" and "end" key words. The "then" keyword will signify the end of a comparison statement. "end" will be the end of the conditional block.
 
@@ -166,7 +167,7 @@ end
 
 --result: reached me
 ```
-<br>
+
 Check if a value is defined:
 ```lua
 local x
@@ -176,7 +177,6 @@ end
 --result: here
 ```
 
-<br>
 Comparison symbols:
 * == equality
 * < less than
@@ -204,7 +204,6 @@ elseif x == 100 or x < 0 then
 end
 --result: at least one statement is true
 ```
-<br>
 
 
 ## Loops
@@ -282,7 +281,7 @@ More: [Wiki](https://www.lua.org/pil/4.3.4.html), [TutorialsPoint](https://www.t
   ```
 
   
-<br>
+
 ## Scope
 A variable can only be seen in the block it is created in. Once the block ends the variable is not accessable anymore and will return nil
   ```
@@ -305,7 +304,7 @@ print(b)
 More: [Wiki](http://lua-users.org/wiki/ScopeTutorial)
 
 
-<br>
+
 ## Table Manipulation
 The variables section I touched on  tables earlier, but this section is about manipulating a table
 
@@ -352,7 +351,7 @@ More: [Wiki](http://lua-users.org/wiki/TablesTutorial), [TutorialsPoint](https:/
   ```
 
 
-<br>
+
 ## Functions
 Functions allow you to reuse code and optionally return a value. You can think of it like a box, you put something in and the box returns you back a result.
 
@@ -380,7 +379,7 @@ end
 ```
 
 
-<br>
+
 ## Math
 The math class has a number of functions for dealing with numbers. You may not need them but here is some of the more useful one functions:
 
@@ -433,37 +432,37 @@ More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
   ```
 
   
-<br>
+
 # Dota 2 Custom Games
 This part is more specific to writing Lua code for custom games in Dota 2.
 
 
-<br>
+
 ## Classes
 * require
 
 
-<br>
+
 ## Thinker Functions
 todo
 
 
-<br>
+
 ## Game State
 todo
 
 
-<br>
+
 ## KV Files
 todo
 
 
-<br>
+
 ## Lua Abilities
 todo
 
 
-<br>
+
 ### Event Listeners:
 * OnSpellStart()
   * When cast time ends, resources have been spent
@@ -502,7 +501,7 @@ todo
   * When the ability is leveled up.
 
 
-<br>
+
 ### Casting Behavior:
 * GetBehavior()
   * Determines the type of targeting behavior used with the cursor, return expects value from DOTA_ABILITY_BEHAVIOR enum ( i.e. DOTA_ABILITY_BEHAVIOR_UNIT_TARGET, DOTA_ABILITY_BEHAVIOR_POINT )
@@ -520,32 +519,32 @@ todo
   * Determines the channel time. Return float value.
 
 
-<br>
+
 ### Special Values
 todo
 
 
-<br>
+
 ### Properties
 todo
 
 
-<br>
+
 ### Thinker
 todo
 
 
-<br>
+
 ## Lua Modifiers
 todo
 
 
-<br>
+
 ### Linking
 todo
 
 
-<br>
+
 ### Event Listeners
 * OnCreated( kv )
   * Called when the modifier is created, with a table of values in "kv". Client/Server. No return type.
@@ -553,7 +552,7 @@ todo
   * Called when the modifier is refreshed (created when already existing ). Client/Server, No return type.
 
 
-<br>
+
 ### States
 * IsHidden()
   * Return true if this modifier should not appear on the buff bar. Client/Server, boolean return type.
@@ -565,7 +564,7 @@ todo
   * Return the name of the particle effect that is applied on the parent when this buff is active. Client/Server, string return type.
 
   
-<br>
+
 ### Modifier Functions
 ```lua
 function modifier_sven_warcry_lua:DeclareFunctions()
@@ -585,19 +584,19 @@ end
 todo
 
 
-<br>
+
 ### Modifier State
 todo
 
 More: [Wiki](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Lua_Abilities_and_Modifiers)
 
 
-<br>
+
 ## Custom Nettables
 todo
 
 
-<br>
+
 ## Panorama
 * layouts
 * lists
