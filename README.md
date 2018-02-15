@@ -284,7 +284,7 @@ More: [Wiki](https://www.lua.org/pil/4.3.4.html), [TutorialsPoint](https://www.t
 
 ## Scope
 A variable can only be seen in the block it is created in. Once the block ends the variable is not accessable anymore and will return nil
-  ```
+  ```lua
 local a = 10
 if a < 100 then
   local b = 10
@@ -322,14 +322,14 @@ More: [Wiki](http://lua-users.org/wiki/TablesTutorial), [TutorialsPoint](https:/
   -- colors = { "red", "pink",  "green", "blue", "orange" }
   ```
 * remove
-  ```
+  ```lua
     local colors = { "red", "green", "blue" }
     table.remove(colors, 1)
     -- colors = { "green", "blue" }
 
   ```
 * nested tables
-  ```
+  ```lua
     local teamColors = {
       [teamA] = { "red", "white" },
       [teamB] = { "blue", "black" }
@@ -357,7 +357,7 @@ Functions allow you to reuse code and optionally return a value. You can think o
 
 More: [Wiki](https://www.lua.org/pil/5.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_functions.htm)
 
-```
+```lua
 function calculateTax(price)
   return price * 0.21
 end
@@ -386,37 +386,37 @@ The math class has a number of functions for dealing with numbers. You may not n
 More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
 
 * abs (absolute value)
-  ```
+  ```lua
   local x = -10
   print(math.abs(x)) --result: 10
   local a = 10
   print(math.abs(a)) --result: 10
   ```
 * ceil (round up decimal value)
-  ```
+  ```lua
   local x = 1.2
   print(math.ceil(x)) --result: 2
   ```
 * deg (Convert value from radians to degrees)
-  ```
+  ```lua
   print(math.deg(math.pi)) -- result: 180
   ```
 * floor (round down decimal value)
-  ```
+  ```lua
   local x = 1.2
   print(math.floor(x)) --result: 1
   ```
 * pi (constant value of pi)
-  ```
+  ```lua
   print(math.pi) --3.1415926535898
   3.1415926535898
   ```
 * rad (Convert value from degrees to radians)
-  ```
+  ```lua
   print(math.rad(180)) --result: 3.1415926535898
   ```
 * random (random number generation)
-  ```
+  ```lua
   --random value between 0 tand 1
   print(math.random()) --result: 0.0012512588885159
 
@@ -427,7 +427,7 @@ More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
   print(math.random(20, 100)) --result: 54
   ```
 * sqrt (Square root of a number)
-  ```
+  ```lua
   print(math.sqrt(100)) --result: 10
   ```
 
