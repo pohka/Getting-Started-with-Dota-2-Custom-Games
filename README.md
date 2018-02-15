@@ -2,7 +2,7 @@
 # Getting Started with Dota 2 Custom Games
 This is the ultimate starting guide to making Dota 2 custom games.
 
-## Refrences
+## Useful links
 * API:
 [Lua](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/API),
 [JavaScript](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Panorama/Javascript/API),
@@ -38,7 +38,7 @@ addon_game_mode.lua
 <br><hr>
 <p align="center" style="font-size:30px;">Lua Basics</p>
 ### Previous Experience (XP)
-Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type. One top of all of this Lua uses the "end" keyword to end a code block rather than the typical curly brackets "{}". Lua also has garbage collection, so there is no need to worry about releasing variables form memory.
+Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type. One top of all of this Lua uses the "end" keyword to end a code block rather than the typical curly brackets "{ }". Lua also has garbage collection, so there is no need to worry about releasing variables form memory.
 
 <br>
 ### Hello World
@@ -49,6 +49,9 @@ print("Hello World")
 <br>
 ### Variables
 Variables are defined with the "local" keyword. They allow you to store a value such as a number, string, boolean, etc.
+
+More: [Wiki](https://www.lua.org/pil/2.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_variables.htm)
+
 ```lua
 local x = 10
 local name = "john doe"
@@ -127,6 +130,8 @@ I don't execute either
 <br>
 ### Conditional Statements
 Conditional statements can decide which code you want to execute using the "if", "elseif", "else", "then" and "end" key words. The "then" keyword will signify the end of a comparison statement. "end" will be the end of the conditional block.
+
+More: [Wiki](https://www.lua.org/pil/4.3.1.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_decision_making.htm)
 ```lua
 local c = 100
 if c > 100 then
@@ -186,7 +191,9 @@ end
 
 
 ### Loops
-A loop will repeats until a specified condition is reached. A basic for loop will increment the variable i on each iteration of the loop until it reaches the size of the colors table. Here is examples of each type of loop
+A loop will repeats until a specified condition is reached. A basic for loop will increment the variable i on each iteration of the loop until it reaches the size of the colors table. Here is examples of each type of loop.
+
+More: [Wiki](https://www.lua.org/pil/4.3.4.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_loops.htm)
 
 * for loop
   ```lua
@@ -210,7 +217,7 @@ A loop will repeats until a specified condition is reached. A basic for loop wil
   print("count is " .. count)
   --result: count is 7
   ```
-* foreach loop
+* iterator loop
   ```lua
     local colors = { "red", "green", "blue" }
     for key,value in pairs(colors) do
@@ -242,7 +249,7 @@ A loop will repeats until a specified condition is reached. A basic for loop wil
     ]]
   ```
 * break
-  ```
+  ```lua
     --breaks allow you to end a loop early
     local colors = { "red", "green", "blue" }
     local size = table.getn(colors)
@@ -256,37 +263,153 @@ A loop will repeats until a specified condition is reached. A basic for loop wil
 
     --result: red
   ```
-  
+
 <br>
 ### Scope
+A variable can only be seen in the block it is created in. Once the block ends the variable is not accessable anymore and will return nil
+  ```
+local a = 10
+if a < 100 then
+  local b = 10
+  a = a + b
+end
+print(a)
+print(b)
 
+--[[
+  result:
+  20
+  nil
+]]
+```
+
+
+More: [Wiki](http://lua-users.org/wiki/ScopeTutorial)
 
 <br>
 ### Table Manipulation
+The variables section I touched on  tables earlier, but this section is about manipulating a table
+
+More: [Wiki](http://lua-users.org/wiki/TablesTutorial), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_tables.htm)
 * insert
+  ```lua
+  local colors = { "red", "green", "blue" }
+
+  --insert at the end of a table
+  table.insert(colors, "orange")
+  -- colors = { "red", "green", "blue", "orange" }
+
+  --insert at index
+  table.insert(colors, 2, "pink")
+  -- colors = { "red", "pink",  "green", "blue", "orange" }
+  ```
 * remove
-* sort
+  ```
+    local colors = { "red", "green", "blue" }
+    table.remove(colors, 1)
+    -- colors = { "green", "blue" }
+
+  ```
 * nested tables
+  ```
+    local teamColors = {
+      [teamA] = { "red", "white" },
+      [teamB] = { "blue", "black" }
+    }
+
+    for teamName,colors in pairs(teamColors) do
+      local colors = teamColors[teamName]
+      local result = teamName .. ": "
+      for i=1, table.getn(colors) do
+        result = result .. colors[i] .. ","
+      end
+      print(result)
+    end
+    --[[
+      result:
+      teamA: red,white,
+      teamB: blue,black,
+    ]]
+  ```
 
 <br>
 ### Functions
+Functions allow you to reuse code and optionally return a value. You can think of it like a box, you put something in and the box returns you back a result.
 
+More: [Wiki](https://www.lua.org/pil/5.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_functions.htm)
 
+```
+function calculateTax(price)
+  return price * 0.21
+end
+
+local chair = 50;
+print("tax on a chair is: " .. calculateTax(chair))
+--result: tax on a chair is: 10.5
+
+local items = {
+  [burger] = 5,
+  [chips] = 2
+}
+for i=1, table.getn(items) do
+  print(calculateTax(items[i]))
+end
+--result:
+1.05
+0.42
+```
 
 <br>
 ### Math
 The math class has a number of functions for dealing with numbers. You may not need them but here is some of the more useful one functions:
-* abs
-* ceil
-* deg
-* exp
-* floor
-* pi
-* rad
-* random
-* sqrt
-* tointeger
-* type
+
+More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
+
+* abs (absolute value)
+  ```
+  local x = -10
+  print(math.abs(x)) --result: 10
+  local a = 10
+  print(math.abs(a)) --result: 10
+  ```
+* ceil (round up decimal value)
+  ```
+  local x = 1.2
+  print(math.ceil(x)) --result: 2
+  ```
+* deg (Convert value from radians to degrees)
+  ```
+  print(math.deg(math.pi)) -- result: 180
+  ```
+* floor (round down decimal value)
+  ```
+  local x = 1.2
+  print(math.floor(x)) --result: 1
+  ```
+* pi (constant value of pi)
+  ```
+  print(math.pi) --3.1415926535898
+  3.1415926535898
+  ```
+* rad (Convert value from degrees to radians)
+  ```
+  print(math.rad(180)) --result: 3.1415926535898
+  ```
+* random (random number generation)
+  ```
+  --random value between 0 tand 1
+  print(math.random()) --result: 0.0012512588885159
+  
+  --random integer value from 1 to 100 (both inclusive)
+  print(math.random(100)) --result: 20
+  
+  --random integer value from 20 to 100 (both inclusive)
+  print(math.random(20, 100)) --result: 54
+  ```
+* sqrt (Square root of a number)
+  ```
+  print(math.sqrt(100)) --result: 10
+  ```
 
 <br><hr>
 <p align="center" style="font-size:30px;">Dota 2 Custom Games</p>
@@ -294,17 +417,17 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 
 
 <br>
-### Classes
+## Classes
 * require
 
 <br>
-### Thinker Functions
+## Thinker Functions
 
 <br>
-### Game State
+## Game State
 
 <br>
-### KV Files
+## KV Files
 
 <br>
 ## Lua Abilities
