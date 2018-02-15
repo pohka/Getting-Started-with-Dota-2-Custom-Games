@@ -38,8 +38,9 @@ addon_game_mode.lua
 <br><hr>
 <p align="center" style="font-size:30px;">Lua Basics</p>
 ### Previous Experience (XP)
-Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type.
+Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type. One top of all of this Lua uses the "end" keyword to end a code block rather than the typical curly brackets "{}". Lua also has garbage collection, so there is no need to worry about releasing variables form memory.
 
+<br>
 ### Hello World
 This will print a message into the console
 ```lua
@@ -83,8 +84,8 @@ print(phase .. name) --result: My name is John Doe
 One of the most useful variable type is the table. Multiple values together and access them with a key.
 ```lua
 local info = {
-  name = "John",
-  age = 18
+  [name] = "John",
+  [age] = 18
 }
 print(info.name .. ": " .. tostring(info.age)) --result: John: 18
 
@@ -181,23 +182,96 @@ end
 --result: at least one statement is true
 ```
 <br>
-### Loops
-* while
-* for
-* foreach
 
+
+
+### Loops
+A loop will repeats until a specified condition is reached. A basic for loop will increment the variable i on each iteration of the loop until it reaches the size of the colors table. Here is examples of each type of loop
+
+* for loop
+  ```lua
+  --prints all the colors
+  local colors = { "red", "green", "blue" }
+  local size = table.getn(colors)
+
+  for i=1, size do
+    print(colors[i])
+  end
+  ```
+* while loop
+  ```lua
+  local i = 4
+  local count = 0
+
+  while i > 2 do
+    count = count + i
+  end
+
+  print("count is " .. count)
+  --result: count is 7
+  ```
+* foreach loop
+  ```lua
+    local colors = { "red", "green", "blue" }
+    for key,value in pairs(colors) do
+      print(key .. ":" .. value)
+    end
+
+    --[[
+      result:
+      1:red
+      2:green
+      3:blue
+    ]]
+
+    --another example
+    local users = {
+      [usa] = 10,
+      [china] = 12,
+      [russia] = 9
+    }
+
+    for country,count in pairs(user) do
+      print(country .. ":" .. count)
+    end
+    --[[
+      result:
+      usa:10
+      china:12
+      russia:9
+    ]]
+  ```
+* break
+  ```
+    --breaks allow you to end a loop early
+    local colors = { "red", "green", "blue" }
+    local size = table.getn(colors)
+
+    for i=1, size do
+      if color[i] == "green" then
+        break --loop ends here
+      end
+      print(colors[i])
+    end
+
+    --result: red
+  ```
+  
 <br>
 ### Scope
 
-<br>
-### Functions
 
 <br>
 ### Table Manipulation
 * insert
 * remove
-* looping
 * sort
+* nested tables
+
+<br>
+### Functions
+
+
 
 <br>
 ### Math
@@ -233,10 +307,10 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 ### KV Files
 
 <br>
-### Lua Abilities
+## Lua Abilities
 
 <br>
-#### Event Listeners:
+### Event Listeners:
 * OnSpellStart()
   * When cast time ends, resources have been spent
 
@@ -274,7 +348,7 @@ This part is more specific to writing Lua code for custom games in Dota 2.
   * When the ability is leveled up.
 
 <br>
-#### Casting Behavior:
+### Casting Behavior:
 * GetBehavior()
   * Determines the type of targeting behavior used with the cursor, return expects value from DOTA_ABILITY_BEHAVIOR enum ( i.e. DOTA_ABILITY_BEHAVIOR_UNIT_TARGET, DOTA_ABILITY_BEHAVIOR_POINT )
 
@@ -291,30 +365,30 @@ This part is more specific to writing Lua code for custom games in Dota 2.
   * Determines the channel time. Return float value.
 
 <br>
-#### Special Values
+### Special Values
 
 
 <br>
-#### Properties
+### Properties
 
 <br>
-#### Thinker
+### Thinker
 
 <br>
-### Lua Modifiers
+## Lua Modifiers
 
 <br>
-#### Linking
+### Linking
 
 <br>
-#### Event Listeners
+### Event Listeners
 * OnCreated( kv )
   * Called when the modifier is created, with a table of values in "kv". Client/Server. No return type.
 * OnRefresh( kv )
   * Called when the modifier is refreshed (created when already existing ). Client/Server, No return type.
 
   <br>
-#### States
+### States
 * IsHidden()
   * Return true if this modifier should not appear on the buff bar. Client/Server, boolean return type.
 * IsDebuff()
@@ -325,7 +399,7 @@ This part is more specific to writing Lua code for custom games in Dota 2.
   * Return the name of the particle effect that is applied on the parent when this buff is active. Client/Server, string return type.
 
   <br>
-#### Modifier Functions
+### Modifier Functions
 ```lua
 function modifier_sven_warcry_lua:DeclareFunctions()
 	local funcs = {
@@ -340,19 +414,19 @@ end
 [Modifier functions API](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/API#modifierfunction)
 
 
-#### Thinkers
+### Thinkers
 
 <br>
-#### Modifier State
+### Modifier State
 
 
 [wiki reference](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Lua_Abilities_and_Modifiers)
 
 <br>
-### Custom Nettables
+## Custom Nettables
 
 <br>
-### Panorama
+## Panorama
 * layouts
 * lists
 * css
