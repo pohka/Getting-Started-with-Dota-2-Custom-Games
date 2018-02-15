@@ -16,18 +16,22 @@ This is the ultimate starting guide to making Dota 2 custom games.
 * Tutorials: [ModDota](https://moddota.com/forums/tutorial-index)
 
 
-<br><hr>
+<br>
 ## Setup
 ### Install tools
+todo
 
 <br>
 ### Create a project
+todo
 
 <br>
 ### IDE
+todo
 
 <br>
 ### Wiki and references
+todo
 
 <br>
 ### Layout
@@ -35,19 +39,19 @@ addon_game_mode.lua
 * activate
 * precache
 
-<br><hr>
-<p align="center" style="font-size:30px;">Lua Basics</p>
-### Previous Experience (XP)
+<br>
+# Lua Basics
+## Previous Experience (XP)
 Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type. One top of all of this Lua uses the "end" keyword to end a code block rather than the typical curly brackets "{ }". Lua also has garbage collection, so there is no need to worry about releasing variables form memory.
 
 <br>
-### Hello World
+## Hello World
 This will print a message into the console
 ```lua
 print("Hello World")
 ```
 <br>
-### Variables
+## Variables
 Variables are defined with the "local" keyword. They allow you to store a value such as a number, string, boolean, etc.
 
 More: [Wiki](https://www.lua.org/pil/2.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_variables.htm)
@@ -111,7 +115,7 @@ Global variables can be access from everywhere
 local _G.foo = 10
 ```
 <br>
-### Comments
+## Comments
 Comments won't be executed and can explain what a block of code does in English. This will allow you and others to understand your better. Everything after "--" will be commented out, but only on that line. You can comment out a block of code using "--[[ ]]"
 ```lua
 local x = 10 --this is a number
@@ -128,7 +132,7 @@ I don't execute either
 ]]
 ```
 <br>
-### Conditional Statements
+## Conditional Statements
 Conditional statements can decide which code you want to execute using the "if", "elseif", "else", "then" and "end" key words. The "then" keyword will signify the end of a comparison statement. "end" will be the end of the conditional block.
 
 More: [Wiki](https://www.lua.org/pil/4.3.1.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_decision_making.htm)
@@ -189,8 +193,7 @@ end
 <br>
 
 
-
-### Loops
+## Loops
 A loop will repeats until a specified condition is reached. A basic for loop will increment the variable i on each iteration of the loop until it reaches the size of the colors table. Here is examples of each type of loop.
 
 More: [Wiki](https://www.lua.org/pil/4.3.4.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_loops.htm)
@@ -265,7 +268,7 @@ More: [Wiki](https://www.lua.org/pil/4.3.4.html), [TutorialsPoint](https://www.t
   ```
 
 <br>
-### Scope
+## Scope
 A variable can only be seen in the block it is created in. Once the block ends the variable is not accessable anymore and will return nil
   ```
 local a = 10
@@ -287,7 +290,7 @@ print(b)
 More: [Wiki](http://lua-users.org/wiki/ScopeTutorial)
 
 <br>
-### Table Manipulation
+## Table Manipulation
 The variables section I touched on  tables earlier, but this section is about manipulating a table
 
 More: [Wiki](http://lua-users.org/wiki/TablesTutorial), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_tables.htm)
@@ -333,7 +336,7 @@ More: [Wiki](http://lua-users.org/wiki/TablesTutorial), [TutorialsPoint](https:/
   ```
 
 <br>
-### Functions
+## Functions
 Functions allow you to reuse code and optionally return a value. You can think of it like a box, you put something in and the box returns you back a result.
 
 More: [Wiki](https://www.lua.org/pil/5.html), [TutorialsPoint](https://www.tutorialspoint.com/lua/lua_functions.htm)
@@ -360,7 +363,7 @@ end
 ```
 
 <br>
-### Math
+## Math
 The math class has a number of functions for dealing with numbers. You may not need them but here is some of the more useful one functions:
 
 More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
@@ -399,10 +402,10 @@ More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
   ```
   --random value between 0 tand 1
   print(math.random()) --result: 0.0012512588885159
-  
+
   --random integer value from 1 to 100 (both inclusive)
   print(math.random(100)) --result: 20
-  
+
   --random integer value from 20 to 100 (both inclusive)
   print(math.random(20, 100)) --result: 54
   ```
@@ -411,8 +414,8 @@ More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
   print(math.sqrt(100)) --result: 10
   ```
 
-<br><hr>
-<p align="center" style="font-size:30px;">Dota 2 Custom Games</p>
+<br>
+# Dota 2 Custom Games
 This part is more specific to writing Lua code for custom games in Dota 2.
 
 
