@@ -18,20 +18,26 @@ This is the ultimate starting guide to making Dota 2 custom games.
 
 <br>
 ## Setup
+
+
 ### Install tools
 todo
+
 
 <br>
 ### Create a project
 todo
 
+
 <br>
 ### IDE
 todo
 
+
 <br>
 ### Wiki and references
 todo
+
 
 <br>
 ### Layout
@@ -39,10 +45,12 @@ addon_game_mode.lua
 * activate
 * precache
 
+
 <br>
 # Lua Basics
 ## Previous Experience (XP)
 Anything with "XP:" is targeted at people who are familiar with other languages to highlight things which are different about Lua. To start there is no semi-colons to end a line, instead a new line is often used to signify a new line of code. Also Lua is a dynamically typed language which means that variables are not fixed to a specific type. One top of all of this Lua uses the "end" keyword to end a code block rather than the typical curly brackets "{ }". Lua also has garbage collection, so there is no need to worry about releasing variables form memory.
+
 
 <br>
 ## Hello World
@@ -50,6 +58,8 @@ This will print a message into the console
 ```lua
 print("Hello World")
 ```
+
+
 <br>
 ## Variables
 Variables are defined with the "local" keyword. They allow you to store a value such as a number, string, boolean, etc.
@@ -114,6 +124,8 @@ Global variables can be access from everywhere
 ```lua
 local _G.foo = 10
 ```
+
+
 <br>
 ## Comments
 Comments won't be executed and can explain what a block of code does in English. This will allow you and others to understand your better. Everything after "--" will be commented out, but only on that line. You can comment out a block of code using "--[[ ]]"
@@ -131,6 +143,8 @@ x=11 (this doesn't execute)
 I don't execute either
 ]]
 ```
+
+
 <br>
 ## Conditional Statements
 Conditional statements can decide which code you want to execute using the "if", "elseif", "else", "then" and "end" key words. The "then" keyword will signify the end of a comparison statement. "end" will be the end of the conditional block.
@@ -267,6 +281,7 @@ More: [Wiki](https://www.lua.org/pil/4.3.4.html), [TutorialsPoint](https://www.t
     --result: red
   ```
 
+  
 <br>
 ## Scope
 A variable can only be seen in the block it is created in. Once the block ends the variable is not accessable anymore and will return nil
@@ -288,6 +303,7 @@ print(b)
 
 
 More: [Wiki](http://lua-users.org/wiki/ScopeTutorial)
+
 
 <br>
 ## Table Manipulation
@@ -335,6 +351,7 @@ More: [Wiki](http://lua-users.org/wiki/TablesTutorial), [TutorialsPoint](https:/
     ]]
   ```
 
+
 <br>
 ## Functions
 Functions allow you to reuse code and optionally return a value. You can think of it like a box, you put something in and the box returns you back a result.
@@ -361,6 +378,7 @@ end
 1.05
 0.42
 ```
+
 
 <br>
 ## Math
@@ -414,6 +432,7 @@ More: [Wiki](http://lua-users.org/wiki/MathLibraryTutorial)
   print(math.sqrt(100)) --result: 10
   ```
 
+  
 <br>
 # Dota 2 Custom Games
 This part is more specific to writing Lua code for custom games in Dota 2.
@@ -423,17 +442,26 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 ## Classes
 * require
 
+
 <br>
 ## Thinker Functions
+todo
+
 
 <br>
 ## Game State
+todo
+
 
 <br>
 ## KV Files
+todo
+
 
 <br>
 ## Lua Abilities
+todo
+
 
 <br>
 ### Event Listeners:
@@ -473,6 +501,7 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 * OnUpgrade()
   * When the ability is leveled up.
 
+
 <br>
 ### Casting Behavior:
 * GetBehavior()
@@ -490,21 +519,31 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 * GetChannelTime()
   * Determines the channel time. Return float value.
 
+
 <br>
 ### Special Values
+todo
 
 
 <br>
 ### Properties
+todo
+
 
 <br>
 ### Thinker
+todo
+
 
 <br>
 ## Lua Modifiers
+todo
+
 
 <br>
 ### Linking
+todo
+
 
 <br>
 ### Event Listeners
@@ -513,7 +552,8 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 * OnRefresh( kv )
   * Called when the modifier is refreshed (created when already existing ). Client/Server, No return type.
 
-  <br>
+
+<br>
 ### States
 * IsHidden()
   * Return true if this modifier should not appear on the buff bar. Client/Server, boolean return type.
@@ -524,7 +564,8 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 * GetEffectName()
   * Return the name of the particle effect that is applied on the parent when this buff is active. Client/Server, string return type.
 
-  <br>
+  
+<br>
 ### Modifier Functions
 ```lua
 function modifier_sven_warcry_lua:DeclareFunctions()
@@ -541,15 +582,20 @@ end
 
 
 ### Thinkers
+todo
+
 
 <br>
 ### Modifier State
+todo
 
+More: [Wiki](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Lua_Abilities_and_Modifiers)
 
-[wiki reference](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Lua_Abilities_and_Modifiers)
 
 <br>
 ## Custom Nettables
+todo
+
 
 <br>
 ## Panorama
