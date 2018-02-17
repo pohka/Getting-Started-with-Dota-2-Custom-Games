@@ -285,20 +285,20 @@ More: [Wiki](https://www.lua.org/pil/4.3.4.html), [TutorialsPoint](https://www.t
 ## Scope
 A variable can only be seen in the block it is created in. Once the block ends the variable is not accessable anymore and will return nil
   ```lua
-local a = 10
-if a < 100 then
-  local b = 10
-  a = a + b
-end
-print(a)
-print(b)
+    local a = 10
+    if a < 100 then
+    local b = 10
+      a = a + b
+    end
+    print(a)
+    print(b)
 
---[[
-  result:
-  20
-  nil
-]]
-```
+    --[[
+     result:
+     20
+     nil
+    ]]
+  ```
 
 
 More: [Wiki](http://lua-users.org/wiki/ScopeTutorial)
@@ -439,8 +439,36 @@ This part is more specific to writing Lua code for custom games in Dota 2.
 
 
 ## Classes
-* require
+A Class is a definition of the methods and in a particular kind of entity which can be reused
+```lua
+	--creating a new class
+  if myClass == nil then
+	myClass = class ({})
+  end
+```
 
+Creating a function for this class
+```lua
+  function myClass:myFunc()
+	print("do something")
+  end
+```
+
+You can move this code into a seperate file and include it in your code by using the "require"
+```lua
+  --addon_game_mode.lua
+  require('myClass')
+  myClass:myFunc() --result: do something
+  
+  --myClass.lua
+  if myClass == nil then
+	myClass = class ({})
+  end
+  
+  function myClass:myFunc()
+	print("do something")
+  end
+```
 
 
 ## Thinker Functions
@@ -451,6 +479,19 @@ todo
 ## Game State
 todo
 
+
+## Global Accessors
+The Dota API has a number of global functions which can be called from anywhere in your code [see here](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/API#Global). However there is also a bunch of global classes too, but therese are the most commonly used:
+* Entities - finding entities in the world
+* PlayerResource - finding players and info on them
+* ParticleManager - handling particles
+* GameRules - setting the rules of the game
+* Vector - 3D coordinate or direction
+* CustomNetTables - getting and setting of custom net tables
+
+
+## Constants
+There are constant values which are used as variables to define something such as a state, type, flag or rule
 
 
 ## KV Files
