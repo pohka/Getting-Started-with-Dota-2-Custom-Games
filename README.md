@@ -472,12 +472,19 @@ You can move this code into a seperate file and include it in your code by using
 
 
 ## Thinker Functions
-todo
+Thinker functions allow you to delay or schedule a function call and is owned by a specific entity. But these delays will keep counting while the game is paused. So it is best to just use them for something like updating the game rules.
+```
+  todo
+```
 
 
 
 ## Game State
-todo
+The game has a number of states it goes through which can be found [here](https://developer.valvesoftware.com/wiki/Dota_2_Workshop_Tools/Scripting/API#DOTA_GameState)
+```
+  local state = GameRules:State_Get()
+  print(state) --result: 3
+```
 
 
 ## Global Accessors
